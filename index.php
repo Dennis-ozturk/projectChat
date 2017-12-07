@@ -38,6 +38,7 @@ if(isset($_POST['submitLogin'])){
   if(mysqli_num_rows($result) == 1){
     while ($row = $name->fetch_assoc()) {
       $_SESSION['name'] = $row['name'];
+      echo "<br>";
     }
     while ($row1 = $password->fetch_assoc()){
       if($row1['password'] == $pass){
@@ -45,6 +46,9 @@ if(isset($_POST['submitLogin'])){
       }else {
         echo "false";
       }
+    } while ($row2 = $result  ->fetch_assoc()) {
+      $_SESSION['email'] = $row2['email'];
+      echo "<br>";
     }
   }else {
     echo "Error";
