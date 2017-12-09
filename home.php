@@ -49,8 +49,8 @@ if(isset($_POST['submitBody'])){
 
   if(mysqli_num_rows($result)){
     while ($row = $result->fetch_assoc()) {
-      echo "<div id=" . 'comment' . ">";
-      echo "<div id=" . 'email' .">" . $row['email'] . "</div>" ;
+      echo "<div onclick=". 'clicked()' ." id=" . 'comment' . $row['id'] . ">";
+      echo "<div id=" . 'email' . $row['id'] .">" . $row['email'] . "</div>" ;
       echo "<div id=" . 'test' .">" . 'ok' . "</div>" ;
       echo "<div id=" . 'body' .">" . $row['body'] . "</div>" ;
       echo "<br>";
@@ -58,6 +58,13 @@ if(isset($_POST['submitBody'])){
     }
   }
 ?>
+
+<script>
+function clicked(){
+alert(<?php $row['id'] ?>);
+}
+
+</script>
 
 
 
