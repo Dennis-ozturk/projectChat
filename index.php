@@ -11,7 +11,8 @@ if(isset($_SESSION['username'])) {
 
 
 <!-- Login form -->
-<form action="" method="POST">
+<h4>Login</h4>
+<form style="width:320px; margin:0 auto;" action="" method="POST">
   <label>Email</label>
   <input type="email" name="email" id="email">
   <br>
@@ -59,9 +60,11 @@ if(isset($_POST['submitLogin'])){
 }
 ?>
 
+<br><br><br>
 
 <!-- Signup form -->
-<form action="" method="POST">
+<h4>Register</h4>
+<form style="width:320px; margin:0 auto;" action="" method="POST">
   <label>Name</label>
   <input type="text" name="name" id="name">
   <br>
