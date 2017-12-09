@@ -42,18 +42,22 @@ if(isset($_POST['submitBody'])){
 
 
 
-<p><?php
+<?php
 
-  $bodyAll = "SELECT body from posts";
+  $bodyAll = "SELECT body, email, id from posts";
   $result = mysqli_query($con, $bodyAll);
 
   if(mysqli_num_rows($result)){
     while ($row = $result->fetch_assoc()) {
-      echo $row['body'];
+      echo "<div id=" . 'comment' . ">";
+      echo "<div id=" . 'email' .">" . $row['email'] . "</div>" ;
+      echo "<div id=" . 'test' .">" . 'ok' . "</div>" ;
+      echo "<div id=" . 'body' .">" . $row['body'] . "</div>" ;
       echo "<br>";
+      echo "</div>";
     }
   }
-?></p>
+?>
 
 
 

@@ -24,12 +24,15 @@ if(isset($_SESSION['username'])) {
 
 <?php
 if(isset($_POST['submitLogin'])){
+  //Get info from above form
   $email = mysqli_real_escape_string($con,$_POST['email']);
   $pass = mysqli_real_escape_string($con,$_POST['passwordLogin']);
   $name = $con->query("SELECT name from users where email='$email'");
 
+  //Convert to md5 security
   $pass = md5($pass);
 
+  //Get info from user
   $sqlInfo = "SELECT email from users where email='$email' AND password='$pass'";
   $result = mysqli_query($con, $sqlInfo);
 
