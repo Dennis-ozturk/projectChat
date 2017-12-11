@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <html>
+  <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -21,6 +21,7 @@ session_start();
 <?php if(isset($_SESSION['name'])) { ?>
   <a href='./logout.php'>Logout</a>
   <a href='./home.php'>Home</a>
+  <a href='./settings.php'>Settings</a>
   <?php } else { ?>
 
     <a href='index.php'>Login</a>

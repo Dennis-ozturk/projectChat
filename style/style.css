@@ -1,5 +1,6 @@
 h3,
-h4{
+h4,
+h1{
   text-align: center !important;
 }
 
@@ -9,13 +10,22 @@ h4{
 }
 
 .body-comment{
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .body-content{
-  margin-left: 40px;
+  margin-left: 80px;
+  margin-top: 20px;
+
 }
 
 .body-name {
+  margin-left: 20px;
+}
+
+.body-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
   margin-left: 20px;
 }
