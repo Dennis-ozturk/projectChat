@@ -15,8 +15,9 @@ include 'includes/header.php';
 <?php
 if(isset($_POST['submitBody'])){
   $email = mysqli_real_escape_string($con, $_SESSION['email']);
+  $name = mysqli_real_escape_string($con, $_SESSION['name']);
   $body = mysqli_real_escape_string($con, $_POST['text']);
-  $date = mysqli_real_escape_string($con, date("Y-m-d") );
+  $date = mysqli_real_escape_string($con, date("Y-m-d H:i:s") );
 
 
   $sqlEmail = "SELECT email FROM users WHERE email='$email'";
@@ -26,10 +27,10 @@ if(isset($_POST['submitBody'])){
   //If true already taken else false
     if(mysqli_num_rows($result) == 1 ){
 
-      $query = mysqli_query($con,"INSERT INTO posts (email, body, date_added) VALUES ('$email', '$body', '$date')");
+      $query = mysqli_query($con,"INSERT INTO posts (email, name, body, date_added) VALUES ('$email', '$name' ,'$body', '$date')");
 
       if($query){
-        echo "Sent to database";
+
       }else{
         echo "Could not send";
       }
@@ -44,28 +45,20 @@ if(isset($_POST['submitBody'])){
 
 <?php
 
-  $bodyAll = "SELECT body, email, id from posts";
+  $bodyAll = "SELECT body, email, name, id, date_added from posts";
   $result = mysqli_query($con, $bodyAll);
 
   if(mysqli_num_rows($result)){
     while ($row = $result->fetch_assoc()) {
-      echo "<div onclick=". 'clicked()' ." id=" . 'comment' . $row['id'] . ">";
-      echo "<div id=" . 'email' . $row['id'] .">" . $row['email'] . "</div>" ;
-      echo "<div id=" . 'test' .">" . 'ok' . "</div>" ;
-      echo "<div id=" . 'body' .">" . $row['body'] . "</div>" ;
+      echo "<div class=" . 'body-comment' . " id=" . 'comment' . $row['id'] . ">";
+      echo "<div class=" . 'body-name' . " id=" . 'email' . $row['id'] .">" . $row['name'] . '<span id="body-date">' . '-' . $row['date_added'] . '</span>' . '-' . "</div>" ;
+      echo "<div class=" . 'body-content' . " id=" . 'test' .">" . 'ok' . "</div>" ;
+      echo "<div class=" . 'body-content' . " id=" . 'body' .">" . $row['body'] . "</div>" ;
       echo "<br>";
       echo "</div>";
     }
   }
 ?>
-
-<script>
-function clicked(){
-alert(<?php $row['id'] ?>);
-}
-
-</script>
-
 
 
 <?php include 'includes/footer.php'; ?>

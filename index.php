@@ -36,7 +36,7 @@ if(isset($_POST['submitLogin'])){
   //Get info from user
   $sqlInfo = "SELECT email from users where email='$email' AND password='$pass'";
   $result = mysqli_query($con, $sqlInfo);
-
+  $name = $con->query("SELECT name from users where email='$email'");
   $password = $con->query("SELECT password from users where email='$email'");
 
   if(mysqli_num_rows($result) == 1){
@@ -50,8 +50,10 @@ if(isset($_POST['submitLogin'])){
       }else {
         echo "false";
       }
-    } while ($row2 = $result  ->fetch_assoc()) {
+    } while ($row2 = $result->fetch_assoc()) {
       $_SESSION['email'] = $row2['email'];
+    } while ($row3 = $name->fetch_assoc()){
+      $_SESSION['name'] = $row3['name'];
       echo "<br>";
     }
   }else {
@@ -65,7 +67,7 @@ if(isset($_POST['submitLogin'])){
 <!-- Signup form -->
 <h4>Register</h4>
 <form style="width:320px; margin:0 auto;" action="" method="POST">
-  <label>Name</label>
+  <label>Username</label>
   <input type="text" name="name" id="name">
   <br>
   <label>Email</label>

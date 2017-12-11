@@ -2,3 +2,20 @@ h3,
 h4{
   text-align: center !important;
 }
+
+#body-date {
+  font-size:12px;
+  padding-left: 10px;
+}
+
+.body-comment{
+  margin-top: 30px;
+}
+
+.body-content{
+  margin-left: 40px;
+}
+
+.body-name {
+  margin-left: 20px;
+}
