@@ -31,6 +31,9 @@ session_start();
                     <a href='./logout.php'>Logout</a>
                     <a href='./home.php'>Home</a>
                     <a href='./settings.php'>Settings</a>
+                    <br>
+                    <br>
+                    <label>Welcome <?php echo $_SESSION['name'] ?>!</label>
                     <?php } else { ?>
 
                       <div id='logo'>

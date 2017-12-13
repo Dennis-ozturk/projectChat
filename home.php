@@ -5,10 +5,10 @@ include 'includes/header.php';
 <?php
 if(isset($_SESSION['name'])){
 ?>
-<form action="" method="POST">
+<form class="body-post" action="" method="POST">
   <label><?php echo $_SESSION['name']; ?></label>
   <br>
-  <textarea style="width: 300px;" type="text" name="text" rows="8" id="text"></textarea>
+  <textarea style="width: 300px; height: 80px;" type="text" name="text" rows="8" id="text"></textarea>
   <br>
   <br>
   <input type="submit" name="submitBody" value="submit" id="submit">
