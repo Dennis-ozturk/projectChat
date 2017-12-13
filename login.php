@@ -9,13 +9,11 @@ if(isset($_SESSION['username'])) {
 ?>
 
 <!-- Login form -->
-<h4>Login</h4>
-<form style="width:320px; margin:0 auto;" action="" method="POST">
-  <label>Email</label>
-  <input type="email" name="email" id="email">
+<form class="form" style="width:320px; margin:0 auto; margin-top: 140px; margin-bottom:140px;" action="" method="POST">
+  <h4>Login</h4>
+  <input type="email" name="email" id="email" placeholder="Email">
   <br>
-  <label>Password</label>
-  <input type="password" name="passwordLogin" id="password">
+  <input type="password" name="passwordLogin" id="password" placeholder="Password">
   <br>
   <br>
   <input type="submit" name="submitLogin" value="submit" id="submit">

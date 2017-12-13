@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
-h3,
-h4,
-h1{
-  text-align: center !important;
-}
+a {
+  color: #fff;
+  text-decoration: underline;
+  -webkit-text-underline-position: under;
+  -ms-text-underline-position: below;
+  text-underline-position: under; }
 
 .row-header{
   margin: 0px auto;
@@ -38,19 +39,32 @@ h1{
   color: #0f0f0f;
 }
 
-#body-date {
+.body-date {
   font-size:12px;
   padding-left: 10px;
 }
 
-.body-comment{
-  margin-top: 50px;
+#body-form{
+  width:320px;
+  margin:0 auto;
+  margin-top: 140px;
+  margin-bottom:140px;
+}
+
+.form input {
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 .body-content{
   margin-left: 80px;
   margin-top: 20px;
 
+}
+
+.body-post{
+  height: 120px;
+  float: left;
 }
 
 .body-name {
@@ -62,4 +76,12 @@ h1{
   height: 60px;
   border-radius: 100%;
   margin-left: 20px;
+}
+
+.footer {
+  margin-top: 500px;
+}
+
+.footer a {
+  color: #000;
 }

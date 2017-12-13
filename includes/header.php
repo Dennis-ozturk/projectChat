@@ -1,3 +1,7 @@
+<?php
+include './db/config.php';
+session_start();
+?>
 <!DOCTYPE html>
   <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -17,17 +21,11 @@
     </head>
     <body>
 
-
-<?php
-include './db/config.php';
-session_start();
-?>
-
 <header class="jumbotron">
       <div class="container">
           <div class="row row-header">
               <div class="col-12 col-sm-8">
-                  <h1>Ristorante con Fusion</h1>
+                  <h1>Header</h1>
 
                   <?php if(isset($_SESSION['name'])) { ?>
                     <a href='./logout.php'>Logout</a>
@@ -35,11 +33,11 @@ session_start();
                     <a href='./settings.php'>Settings</a>
                     <?php } else { ?>
 
-                      <a href='index.php'>Login</a>
-                      <a href='signup.php'>Sign up!</a>
                       <div id='logo'>
-                        <h3>Mr.Repair alpha website</h3>
+                        <h3>Header</h3>
                       </div>
+                      <a href='login.php'>Login</a>
+                      <a href='signup.php'>Sign up!</a>
                     <?php } ?>
               </div>
               <div class="col col-sm">

@@ -3,17 +3,13 @@ include 'includes/header.php';
 ?>
 
 <!-- Signup form -->
-<h4>Register</h4>
-<form style="width:320px; margin:0 auto;" action="" method="POST" enctype="multipart/form-data">
-  <label>Username</label>
-  <input type="text" name="name" id="name">
+<form class="form" style="width:320px; margin:0 auto; margin-top: 140px; margin-bottom:140px;" action="" method="POST" enctype="multipart/form-data">
+  <h4>Register</h4>
+  <input type="text" name="name" id="name" placeholder="Username">
   <br>
-  <label>Email</label>
-  <input type="email" name="email" id="email">
+  <input type="email" name="email" id="email" placeholder="Email">
   <br>
-  <label>Password</label>
-  <input type="password" name="password" id="password">
-
+  <input type="password" name="password" id="password" placeholder="Password">
   <input type="file" name="file" />
   <br><br>
   <input type="submit" name="submit" value="submit" id="submit">

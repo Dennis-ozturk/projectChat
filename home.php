@@ -8,7 +8,6 @@ if(isset($_SESSION['name'])){
 <form action="" method="POST">
   <label><?php echo $_SESSION['name']; ?></label>
   <br>
-  <label>Body</label>
   <textarea style="width: 300px;" type="text" name="text" rows="8" id="text"></textarea>
   <br>
   <br>
@@ -25,26 +24,21 @@ if(isset($_POST['submitBody'])){
   $name = mysqli_real_escape_string($con, $_SESSION['name']);
   $body = mysqli_real_escape_string($con, $_POST['text']);
   $date = mysqli_real_escape_string($con, date("Y-m-d H:i:s") );
-
-
   $sqlEmail = "SELECT email FROM users WHERE email='$email'";
   $result = mysqli_query($con, $sqlEmail);
-
   $file = $con->query("SELECT file from users where email='$email'");
-
   //If true already taken else false
     if(mysqli_num_rows($result) == 1 ){
       while($row = $file->fetch_assoc()){
-
       $imageFile = $row['file'];
       $query = mysqli_query($con,"INSERT INTO posts (email, name, body, file, date_added) VALUES ('$email', '$name' ,'$body', '$imageFile', '$date')");
       if($query){
-
       }else{
         echo "Could not send";
       }
+      unset($_POST);
+      header('Location:'.$_SERVER['PHP_SELF']);
     }
-
     }else {
       echo "Could not send to database";
     }
@@ -55,10 +49,8 @@ if(isset($_POST['submitBody'])){
 
 <?php
 if(isset($_SESSION['name'])){
-
   $bodyAll = "SELECT body, email, name, id, file, date_added from posts";
   $result = mysqli_query($con, $bodyAll);
-
   if(mysqli_num_rows($result)){
     while ($row = $result->fetch_assoc()) {
         echo "<div class=" . 'body-comment' . " id=" . 'comment' . $row['id'] . ">";
