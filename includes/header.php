@@ -36,9 +36,6 @@ session_start();
                     <label>Welcome <?php echo $_SESSION['name'] ?>!</label>
                     <?php } else { ?>
 
-                      <div id='logo'>
-                        <h3>Header</h3>
-                      </div>
                       <a href='login.php'>Login</a>
                       <a href='signup.php'>Sign up!</a>
                     <?php } ?>

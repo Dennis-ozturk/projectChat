@@ -8,6 +8,9 @@ a {
   -ms-text-underline-position: below;
   text-underline-position: under; }
 
+h4{
+  text-align: center;
+}
 .row-header{
   margin: 0px auto;
   padding: 0px auto;
@@ -47,8 +50,9 @@ a {
 #body-form{
   width:320px;
   margin:0 auto;
-  margin-top: 140px;
-  margin-bottom:140px;
+  margin-top: 120px;
+  margin-bottom:120px;
+  background-color: blue;
 }
 
 #submit {
@@ -60,11 +64,35 @@ a {
   cursor: pointer;
 }
 
-.form input {
-  margin: 0 auto;
-  margin-top: 20px;
+.form {
+  max-width: 300px;
+  width: 100%;
+  background: #4aaee7;
+  color: white;
+  margin: 0% auto;
+  height: auto;
+  margin-top: 100px;
+  border-radius: 8px;
 }
 
+.form input {
+  width: 80%;
+  height: 40px;
+  margin-left: 10%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#submit {
+  width: 40%;
+  border:1px solid #4aaee7;
+	background: #3A88B5;
+	color: white;
+	border-radius: 5px;
+	padding: 10px;
+  margin-bottom: 20px;
+  margin-left: 30%;
+}
 .body-content{
   margin-left: 80px;
   margin-top: 20px;
@@ -90,7 +118,7 @@ a {
 }
 
 .footer {
-  margin-top: 500px;
+  margin-top: 100px;
 }
 
 .footer a {

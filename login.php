@@ -14,8 +14,6 @@ if(isset($_SESSION['username'])) {
   <input type="email" name="email" id="email" placeholder="Email">
   <br>
   <input type="password" name="passwordLogin" id="password" placeholder="Password">
-  <br>
-  <br>
   <input type="submit" name="submitLogin" value="submit" id="submit">
 </form>
 
