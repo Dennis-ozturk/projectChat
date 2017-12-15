@@ -11,6 +11,15 @@ a {
 h4{
   text-align: center;
 }
+
+.comments{
+  width: 400px;
+  float: left;
+}
+.files {
+  width: 400px;
+  float: left;
+}
 .row-header{
   margin: 0px auto;
   padding: 0px auto;
@@ -44,8 +53,16 @@ h4{
 
 .body-date {
   font-size:12px;
-  padding-left: 10px;
+  padding-left: 10px; 
 }
+
+
+.body-comment{
+  width: 400px;
+  float: left;
+  margin-top: 60px;
+}
+
 
 #body-form{
   width:320px;
@@ -55,11 +72,17 @@ h4{
   background-color: blue;
 }
 
+.body-content{
+  float: left;
+  width: 60%;
+  margin-left: 20%;
+}
 #submit {
   width: 100px;
   height: 40px;
   border: none;
 }
+
 #submit:hover {
   cursor: pointer;
 }
@@ -83,8 +106,13 @@ h4{
   text-align: center;
 }
 
+.form h4 {
+  padding-top: 15px;
+}
+
 #submit {
   width: 40%;
+  height: 50px;
   border:1px solid #4aaee7;
 	background: #3A88B5;
 	color: white;
@@ -93,15 +121,11 @@ h4{
   margin-bottom: 20px;
   margin-left: 30%;
 }
-.body-content{
-  margin-left: 80px;
-  margin-top: 20px;
-
-}
 
 .body-post{
-  height: 120px;
+  height: 1200px;
   float: left;
+  margin-right: 120px;
   margin-left: 60px;
   margin-top: 20px;
 }
@@ -115,10 +139,20 @@ h4{
   height: 60px;
   border-radius: 100%;
   margin-left: 20px;
+  float: left;
+}
+
+.body-document{
+  width: 300px;
+  float: right;
+}
+
+.body-document a{
+  color: #000;
 }
 
 .footer {
-  margin-top: 100px;
+  margin-top: 600px;
 }
 
 .footer a {
