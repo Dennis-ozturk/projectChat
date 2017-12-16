@@ -8,7 +8,7 @@ include 'includes/header.php';
                 <h3>Our Lipsmacking Culinary Creations</h3>
             </div>
             <div class="col-sm cal-md flex-first">
-                <h2>Uthappizza</h2>
+                <h2>Services</h2>
                 <p>A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
             </div>
         </div>
@@ -16,7 +16,7 @@ include 'includes/header.php';
 
         <div class="row row-content align-items-center">
             <div class="col-sm-4 col-md-3">
-                <h3>This Month's Promotions</h3>
+                <h3>Personal</h3>
             </div>
             <div class="col-sm cal-md">
                 <h2>Weekend Grand Buffet</h2>
@@ -26,7 +26,7 @@ include 'includes/header.php';
 
         <div class="row row-content align-items-center">
             <div class="col-sm-4 col-md-3 flex-last">
-                <h3>Meet our Culinary Specialists</h3>
+                <h3>Location</h3>
             </div>
             <div class="col-sm col-md flex-first">
                 <h2>Alberto Somayya</h2>
