@@ -24,9 +24,9 @@ session_start();
 <header class="jumbotron">
       <div class="container">
           <div class="row row-header">
-              <div class="col-12 col-sm-8">
-                  <h1>Header</h1>
-
+              <div class="jumbo-head">
+                <img src="img/techknight.png" style="float:left; width:120px; height:120px;">
+                  <h1 style="float:left; padding-left: 30px;padding-top:40px;">TechKnight</h1>
                   <?php if(isset($_SESSION['name'])) { ?>
                     <a href='./logout.php'>Logout</a>
                     <a href='./home.php'>Home</a>
@@ -39,8 +39,6 @@ session_start();
                       <a href='login.php'>Login</a>
                       <a href='signup.php'>Sign up!</a>
                     <?php } ?>
-              </div>
-              <div class="col col-sm">
               </div>
           </div>
       </div>

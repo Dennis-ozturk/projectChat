@@ -8,6 +8,10 @@ a {
   -ms-text-underline-position: below;
   text-underline-position: under; }
 
+h1 {
+  font-size: 48px;
+}
+
 h4{
   text-align: center;
 }
@@ -41,7 +45,7 @@ h4{
 .jumbotron{
   padding: 70px 30px 70px 30px;
   margin: 0px auto;
-  background: #9575CD;
+  background: #FF7538;
   color: #fff;
 }
 
@@ -53,7 +57,7 @@ h4{
 
 .body-date {
   font-size:12px;
-  padding-left: 10px; 
+  padding-left: 10px;
 }
 
 
@@ -151,9 +155,6 @@ h4{
   color: #000;
 }
 
-.footer {
-  margin-top: 600px;
-}
 
 .footer a {
   color: #000;

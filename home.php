@@ -1,6 +1,7 @@
 <?php
 include 'includes/header.php';
 ?>
+<div class="container-home">
 <?php
   if(isset($_SESSION['name'])){
 ?>
@@ -79,14 +80,18 @@ if(isset($_SESSION['name'])){
 <div class="files">
 <?php
 if(isset($_SESSION['name'])){
-  $document = "SELECT document from posts";
+  $document = "SELECT document, type from posts";
   $result_document = mysqli_query($con, $document);
   if(mysqli_num_rows($result_document)){
     while ($row1 = $result_document->fetch_assoc()) {
+      if(empty($row1['type'])){
+
+      }else {
         echo "<div class=" . 'body-document' . ">";
         echo "<a class=" . 'body-image' . " href=" . 'uploads/documents/' . $row1['document'] .">Link</a>";
         echo "<br>";
         echo "</div>";
+      }
     }
   }
 }else {
@@ -94,4 +99,4 @@ if(isset($_SESSION['name'])){
 }
 ?>
 </div>
-<?php include 'includes/footer.php'; ?>
+</div>
