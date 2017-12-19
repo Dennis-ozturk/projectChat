@@ -43,5 +43,6 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/tether.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

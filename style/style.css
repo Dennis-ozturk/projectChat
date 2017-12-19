@@ -36,19 +36,20 @@ h4{
   min-height: 400px;
 }
 
-.footer {
-  background-color: #D1C4E9;
-  margin: 0px auto;
-  padding: 20px 0px 20px 0px;
-}
 
 .jumbotron{
   padding: 70px 30px 70px 30px;
   margin: 0px auto;
-  background: #FF7538;
+  background: blue;
   color: #fff;
 }
 
+.jumbo-head a{
+  display: inline-block;
+  margin-top: 55px;
+  margin-left: 25px;
+  float: left;
+}
 .address{
   font-size: 80%;
   margin: 0px;
@@ -155,7 +156,12 @@ h4{
   color: #000;
 }
 
-
+.footer {
+  background-color: #CC3300;
+  margin: 0px auto;
+  padding: 20px 0px 20px 0px;
+  color:#fff;
+}
 .footer a {
-  color: #000;
+  color: #fff;
 }
