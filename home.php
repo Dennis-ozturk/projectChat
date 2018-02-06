@@ -58,8 +58,9 @@ if(isset($_POST['submitBody'])){
 
 <div class="comments">
 <?php
+//COMMENT POSTS
 if(isset($_SESSION['name'])){
-  $bodyAll = "SELECT body, email, name, id, file, date_added from posts";
+  $bodyAll = "SELECT body, email, name, id, file, date_added FROM posts ORDER BY date_added DESC";
   $result = mysqli_query($con, $bodyAll);
   if(mysqli_num_rows($result)){
     while ($row = $result->fetch_assoc()) {
@@ -79,6 +80,7 @@ if(isset($_SESSION['name'])){
 </div>
 <div class="files">
 <?php
+//IMAGE UPLOADS FROM USERS
 if(isset($_SESSION['name'])){
   $document = "SELECT document, type from posts";
   $result_document = mysqli_query($con, $document);
