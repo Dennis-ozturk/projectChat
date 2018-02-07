@@ -48,22 +48,26 @@ if(isset($_POST['subSettings'])){
 	$currentPassword = $con->query("SELECT password FROM users WHERE email='$email'");
 
 	$encryptOld = md5($oldPassword);
+	$encryptNew = md5($newPassword1);
 
 	$result = mysqli_query($con, $sqlEmail);
 
 
 	if (mysqli_num_rows($result) == 1) {
 		while ($row = $currentPassword->fetch_assoc()) {
-			if ($row['password'] == $encryptOld) {
-				$encryptNew = md5($newPassword1);
-				$sqlUpdate = "UPDATE users SET password='$encryptNew' WHERE email='$email'";
-				if (mysqli_query($con, $sqlUpdate)) {
-					echo "Updated";
+			if($row['password'] != $encryptNew ){
+				if ($row['password'] == $encryptOld) {
+					$sqlUpdate = "UPDATE users SET password='$encryptNew' WHERE email='$email'";
+					if (mysqli_query($con, $sqlUpdate)) {
+						echo "Updated";
+					}else {
+						echo "something went wrong";
+					}
 				}else {
-					echo "something went wrong";
+					echo "Something went wrong";
 				}
 			}else {
-				echo "Something went wrong";
+				echo "Can't enter old password, please enter a new password !";
 			}
 		}
 	}
