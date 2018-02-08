@@ -211,7 +211,12 @@ h1 {
 
 .search-image{
   width: 60px;
-  height: 60px; 
+  height: 60px;
+}
+
+.public-profile-image{
+  width: 60px;
+  height: 60px;
 }
 
 .footer {

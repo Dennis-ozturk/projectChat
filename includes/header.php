@@ -29,6 +29,7 @@ session_start();
           <a href='./logout.php'>Logout</a>
           <a href='./home.php'>Home</a>
           <a href='./profile.php'>Profile</a>
+          <a href='./profileUsers.php'>All users</a>
           <a href='./settings.php'>Settings</a>
 
           <br />
