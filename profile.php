@@ -1,10 +1,10 @@
 <?php include 'includes/header.php'; ?>
 <?php
 
-$email = $_SESSION['email'];
+$name = $_SESSION['name'];
 
 if (isset($_SESSION['name'])) {
-  $profile = "SELECT name, email, password, file, type, size, date_added FROM users WHERE email='$email'";
+  $profile = "SELECT name, email, password, file, type, size, date_added FROM users WHERE name='$name'";
   $resultProfile = mysqli_query($con, $profile);
 
   if (mysqli_num_rows($resultProfile)) {

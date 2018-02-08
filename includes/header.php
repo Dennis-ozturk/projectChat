@@ -24,13 +24,40 @@ session_start();
         <h1 class="title" onclick="homePage()">Forum</h1>
         <div class="navbar">
           <?php if(isset($_SESSION['name'])) { ?>
+            <span class="user-name">Welcome <?php echo $_SESSION['name'] ?>!</span>
+            <br>
           <a href='./logout.php'>Logout</a>
           <a href='./home.php'>Home</a>
           <a href='./profile.php'>Profile</a>
           <a href='./settings.php'>Settings</a>
+
+          <br />
+
+          <form class="user-name" style="margin-top: 15px;" action="" method="post" enctype="multipart/form-data">
+            <input type="text" name="search">
+            <input type="submit" name="submitSearch">
+          </form>
+          <?php
+
+          if (isset($_POST['submitSearch'])) {
+            $search_value = mysqli_real_escape_string($con, $_POST['search']);
+            $select_value = "SELECT * FROM users WHERE name='$search_value'";
+            $result_value = mysqli_query($con, $select_value);
+
+            if (mysqli_num_rows($result_value)) {
+              while ($row = $result_value->fetch_assoc()) {
+                echo "<br />";
+                echo "<span class=". 'user-name' .">Result: </span>";
+                echo "<br />";
+                echo "<img class=" . 'search-image' . " src=" . 'uploads/profile/' . $row['file'] .">";
+                echo "<span class=". 'user-name' .">". $row['name'] ." </span> ";
+              }
+            }
+          }
+
+           ?>
+
           <br>
-          <br>
-          <span class="user-name">Welcome <?php echo $_SESSION['name'] ?>!</span>
         </div>
         <?php } else { ?>
         <a href='login.php'>Login</a>
