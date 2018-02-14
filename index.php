@@ -2,4 +2,26 @@
 include 'includes/header.php';
 ?>
 
-<?php include 'includes/footer.php'; ?>
+
+<div class="blog-posts">
+  <h1>Latest tech posts</h1>
+
+  <div class="row">
+    <img src="img/java.png" alt="">
+    <a class="post-title" href="#">Title</a>
+    <p class="post-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <a class="post-btn" href="#">read more</a>
+  </div>
+  <div class="row">
+    <img src="img/java.png" alt="">
+    <a class="post-title" href="#">Title</a>
+    <p class="post-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <a class="post-btn" href="#">read more</a>
+  </div>
+  <div class="row">
+    <img src="img/java.png" alt="">
+    <a class="post-title" href="#">Title</a>
+    <p class="post-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <a class="post-btn" href="#">read more</a>
+  </div>
+</div>

@@ -19,8 +19,6 @@ if (isset($_SESSION['name'])) {
     }
   }
 }
-
-
 ?>
 
 

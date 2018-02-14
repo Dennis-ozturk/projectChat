@@ -217,6 +217,50 @@ h1 {
 .public-profile-image{
   width: 60px;
   height: 60px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.public-profile-name{
+  margin-left: 20px;
+}
+
+.blog-posts{
+  margin-left: 5%;
+}
+
+.row{
+  width: 90%;
+  height: auto;
+  float: left;
+  margin-top: 50px;
+}
+
+.row img{
+  float: left;
+  margin-right: 10px;
+}
+
+.post-title{
+  color: #000 !important;
+  text-decoration: none;
+  font-size: 30px;
+  float: left;
+}
+
+.post-info{
+  width: 100%;
+  height: 100%;
+}
+
+.post-btn{
+  color: #000 !important;
+  text-decoration: none;
+  padding: 12px 35px;
+  text-transform: uppercase;
+  border: 2px solid #1E90FF;
+  float: right;
+
 }
 
 .footer {
