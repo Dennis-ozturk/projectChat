@@ -9,8 +9,6 @@ session_start();
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="style/bootstrap.min.css">
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -31,7 +29,7 @@ session_start();
           <a href='./profile.php'>Profile</a>
           <a href='./profileUsers.php'>All users</a>
           <a href='./settings.php'>Settings</a>
-
+          <a href='./messenger.php'>Live chat</a>
           <br />
 
           <form class="user-name" style="margin-top: 15px;" action="" method="post" enctype="multipart/form-data">

@@ -1,27 +1,27 @@
 <?php
 include 'includes/header.php';
+include 'info.php';
 ?>
-
 
 <div class="blog-posts">
   <h1>Latest tech posts</h1>
+<?php
+for ($row=0; $row <3 ; $row++) {
+  $title = $blog[$row]["Title"];
+?>
+  <div class="row">
+    <img src="img/java.png" alt="">
+    <a class="post-title" href="blog.php"><?php echo $blog[$row]["Title"]; ?></a>
+    <br>
+    <br>
+    <p class="post-info"> <?php echo $blog[$row]["Info"]; ?></p>
+    <a class="post-btn" href="blog.php">read more</a>
+  </div>
+<?php } ?>
 
-  <div class="row">
-    <img src="img/java.png" alt="">
-    <a class="post-title" href="#">Title</a>
-    <p class="post-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <a class="post-btn" href="#">read more</a>
-  </div>
-  <div class="row">
-    <img src="img/java.png" alt="">
-    <a class="post-title" href="#">Title</a>
-    <p class="post-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <a class="post-btn" href="#">read more</a>
-  </div>
-  <div class="row">
-    <img src="img/java.png" alt="">
-    <a class="post-title" href="#">Title</a>
-    <p class="post-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <a class="post-btn" href="#">read more</a>
-  </div>
+
+
+
+
 </div>
+<?php include 'includes/footer.php'; ?>

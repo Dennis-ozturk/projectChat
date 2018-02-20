@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+
+html{
+  overflow-x: hidden;
+}
+
 body{
   font-family: 'Montserrat';
   margin: 0;
@@ -194,7 +199,7 @@ h1 {
 
 .profile{
   width: 100%;
-  height: 600px;
+  height: auto;
 }
 
 .profile img{
@@ -226,6 +231,8 @@ h1 {
 }
 
 .blog-posts{
+  width: 100%;
+  height: 800px;
   margin-left: 5%;
 }
 
@@ -249,8 +256,8 @@ h1 {
 }
 
 .post-info{
-  width: 100%;
-  height: 100%;
+  height: auto;
+  float: left;
 }
 
 .post-btn{
@@ -260,15 +267,90 @@ h1 {
   text-transform: uppercase;
   border: 2px solid #1E90FF;
   float: right;
+  margin-bottom: 30px !important;
+}
 
+.chatbox{
+  width: 300px;
+  height: 400px;
+  background-color: #1E90FF;
+  border: 10px solid #333;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.box{
+  width: 97%;
+  height: 80%;
+  background-color: #fff;
+  border: 5px solid #666;
+}
+
+.close{
+  display: none;
+}
+
+.edit-hobby{
+  le
 }
 
 .footer {
+  width: 100%;
+  height: 500px;
   background-color: #292929;
   margin: 0px auto;
-  padding: 20px 0px 20px 0px;
+  bottom: 0;
+  left: 0;
   color:#fff;
+  margin-top: 600px;
 }
 .footer a {
   color: #fff;
+}
+
+@media (max-width: 710px) {
+  .blog-posts{
+    height: 1100px;
+  }
+}
+
+@media (max-width:700px) {
+  .post-title{
+    width: 300px;
+    float: right;
+    width:
+  }
+
+  .post-info{
+    width: 100%;
+    height: 100%;
+    float: left;
+  }
+
+  .post-btn{
+    float: left;
+  }
+
+  .navbar{
+    margin-top: 0;
+  }
+
+}
+
+@media (max-width:550px) {
+  .post-title{
+    width: 200px;
+    float: right;
+    width:
+  }
+}
+
+@media (max-width:400px) {
+  .blog-posts{
+    height: 1500px;
+  }
+  .post-title{
+    float: left;
+  }
 }
