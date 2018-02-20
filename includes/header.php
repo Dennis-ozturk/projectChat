@@ -34,6 +34,7 @@ session_start();
           <br>
         </div>
         <form class="user-name" style="float:right;margin-top: 15px;" action="" method="post" enctype="multipart/form-data">
+          <h4>Search users</h4>
           <input type="text" name="search">
           <input type="submit" name="submitSearch">
         </form>
