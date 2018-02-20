@@ -30,34 +30,30 @@ session_start();
           <a href='./profileUsers.php'>All users</a>
           <a href='./settings.php'>Settings</a>
           <a href='./messenger.php'>Live chat</a>
-          <br />
-
-          <form class="user-name" style="margin-top: 15px;" action="" method="post" enctype="multipart/form-data">
-            <input type="text" name="search">
-            <input type="submit" name="submitSearch">
-          </form>
-          <?php
-
-          if (isset($_POST['submitSearch'])) {
-            $search_value = mysqli_real_escape_string($con, $_POST['search']);
-            $select_value = "SELECT * FROM users WHERE name='$search_value'";
-            $result_value = mysqli_query($con, $select_value);
-
-            if (mysqli_num_rows($result_value)) {
-              while ($row = $result_value->fetch_assoc()) {
-                echo "<br />";
-                echo "<span class=". 'user-name' .">Result: </span>";
-                echo "<br />";
-                echo "<img class=" . 'search-image' . " src=" . 'uploads/profile/' . $row['file'] .">";
-                echo "<span class=". 'user-name' .">". $row['name'] ." </span> ";
-              }
-            }
-          }
-
-           ?>
 
           <br>
         </div>
+        <form class="user-name" style="float:right;margin-top: 15px;" action="" method="post" enctype="multipart/form-data">
+          <input type="text" name="search">
+          <input type="submit" name="submitSearch">
+        </form>
+        <?php
+
+        if (isset($_POST['submitSearch'])) {
+          $search_value = mysqli_real_escape_string($con, $_POST['search']);
+          $select_value = "SELECT * FROM users WHERE name LIKE '%$search_value%'";
+          $result_value = mysqli_query($con, $select_value);
+
+          if (mysqli_num_rows($result_value)) {
+            echo "<span class=". 'user-name' .">Result: </span>";
+            while ($row = $result_value->fetch_assoc()) {
+              echo "<br />";
+              echo "<img class=" . 'search-image' . " src=" . 'uploads/profile/' . $row['file'] .">";
+              echo "<span class=". 'user-name' .">". $row['name'] ." </span> ";
+            }
+          }
+        }
+         ?>
         <?php } else { ?>
         <a href='login.php'>Login</a>
         <a href='signup.php'>Sign up!</a>
