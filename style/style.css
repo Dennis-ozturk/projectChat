@@ -291,23 +291,14 @@ h1 {
   display: none;
 }
 
-.edit-hobby{
-  le
+.profile-link{
+  color: #000;
 }
 
-.footer {
-  width: 100%;
-  height: 500px;
-  background-color: #292929;
-  margin: 0px auto;
-  bottom: 0;
-  left: 0;
-  color:#fff;
-  margin-top: 600px;
+.users{
+  float: left;
 }
-.footer a {
-  color: #fff;
-}
+
 
 @media (max-width: 710px) {
   .blog-posts{
