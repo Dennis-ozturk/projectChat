@@ -29,7 +29,7 @@ if (mysqli_num_rows($public_result)) {
 if (isset($_POST['add'])) {
   $name = mysqli_real_escape_string($con, $_POST['name']);
   $current_user = $_SESSION['name'];
-  $selectQuery = "SELECT name, friends FROM user_friends";
+  $selectQuery = "SELECT name, friends FROM user_friends WHERE name='$current_user'";
   $friendsSql = mysqli_query($con, $selectQuery);
 
   if ($name == $current_user) {
@@ -38,44 +38,38 @@ if (isset($_POST['add'])) {
 
   } elseif ($name != $current_user) {
     /*User adding*/
-    if (empty(mysqli_num_rows($friendsSql))) {
-      /*If mysql rows are empty*/
+    if (mysqli_num_rows($friendsSql) == 0) {
+      /*No email*/
       $queryFriendsInsert = mysqli_query($con, "INSERT INTO user_friends (name, friends) VALUES ('$current_user', '$name')");
       if ($queryFriendsInsert) {
-        echo "Added";
+        echo "Added Friend";
       }else {
         echo "Error";
       }
-      echo ' <script> window.location.replace("http://localhost/projectChat/profileUsers.php"); </script>';
-    }elseif (mysqli_num_rows($friendsSql)) {
-      /*If mysql rows not empty*/
+    }elseif (mysqli_num_rows($friendsSql) == 1) {
+      /*Found email*/
       while ($row = $friendsSql->fetch_assoc()) {
-        if ($name == $row['friends'] && $current_user == $row['name'] ) {
+        if ($current_user == $row['name'] and $name == $row['friends'] ) {
           /*Already friends*/
           echo "Already added";
-        } elseif ($current_user == $row['name'] && $name != $row['friends']) {
-          /*Add friend*/
-          $queryFriendsInsert = mysqli_query($con, "INSERT INTO user_friends (name, friends) VALUES ('$current_user', '$name')");
-          if ($queryFriendsInsert) {
-            echo "Added";
+          break;
+        }elseif ($current_user == $row['name']) {
+          if ($name == $row['friends']) {
+            echo "Already friends";
+            break;
           }else {
-            echo "Error";
+            $queryFriendsInsert = mysqli_query($con, "INSERT INTO user_friends (name, friends) VALUES ('$current_user', '$name')");
+            if ($queryFriendsInsert) {
+              echo "Added Friend";
+            }else {
+              echo "Error";
+            }
           }
-          echo ' <script> window.location.replace("http://localhost/projectChat/profileUsers.php"); </script>';
-        }elseif (empty($row['name'])) {
-          $queryFriendsInsert = mysqli_query($con, "INSERT INTO user_friends (name, friends) VALUES ('$current_user', '$name')");
-          if ($queryFriendsInsert) {
-            echo "Added";
-          }else{
-            echo "Error";
-          }
-          echo ' <script> window.location.replace("http://localhost/projectChat/profileUsers.php"); </script>';
         }
-
       }
+    }else {
+      echo "Already friends";
     }
-  } else {
-    echo "error";
   }
 }
 ?>

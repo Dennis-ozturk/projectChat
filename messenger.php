@@ -60,6 +60,7 @@ if (isset($_SESSION['name'])) {
 
       if (mysqli_query($con, $selectQuery)) {
         echo "New record created successfully";
+        echo ' <script> window.location.replace("http://localhost/projectChat/messenger.php?' . $user_to .'"); </script>';
       } else {
         echo "Error: " . $selectQuery . "<br>" . mysqli_error($con);
       }
