@@ -26,12 +26,25 @@ h1 {
   font-size: 48px;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    border: none;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
 
 .title{
   float:left;
   padding-left: 30px;
   padding-right: 40px;
   padding-top:40px;
+}
+
+.title:hover{
+  cursor: pointer;
 }
 
 .user-name{

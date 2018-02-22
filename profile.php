@@ -35,12 +35,32 @@ if (isset($_SESSION['name'])) {
       echo "</div>";
     }
   }
+  ?>
 
-}
-?>
+  <h4>Friends</h4>
+  <?php
+    $current_user = $_SESSION['name'];
+    $selectFriends = "SELECT name, friends FROM user_friends";
+
+    $friendsQuery = mysqli_query($con, $selectFriends);
+
+    if (empty(mysqli_num_rows($friendsQuery))) {
+      echo "No friends";
+    }elseif (mysqli_num_rows($friendsQuery)) {
+      while ($row1 = $friendsQuery->fetch_assoc()) {
+        if ($row1['name'] == $current_user) {
+          echo "<h4>" . $row1['friends'] . "</h4>";
+        }else {
+        }
+      }
+    }
 
 
-<form class="hobby-form close" style="width:320px;" action="" method="POST" enctype="multipart/form-data">
+   ?>
+  <br>
+
+
+  <form class="hobby-form close" style="width:320px;" action="" method="POST" enctype="multipart/form-data">
   <h4>Favorite hobby</h4>
   <input type="text" name="hobby" id="hobby" placeholder="Hobby">
   <br>
@@ -51,41 +71,48 @@ if (isset($_SESSION['name'])) {
   <input type="text" name="book" id="book" placeholder="Book">
   <br><br>
   <input type="submit" name="submitProfile" value="submit">
-</form>
+  </form>
 
 
-<?php
+  <?php
 
-if (isset($_POST['submitProfile'])) {
-  $hobby = mysqli_real_escape_string($con, $_POST['hobby']);
-  $movie = mysqli_real_escape_string($con, $_POST['movie']);
-  $book = mysqli_real_escape_string($con, $_POST['book']);
-  $date = mysqli_real_escape_string($con, date("Y-m-d") );
-  $email = $_SESSION['email'];
+  if (isset($_POST['submitProfile'])) {
+    $hobby = mysqli_real_escape_string($con, $_POST['hobby']);
+    $movie = mysqli_real_escape_string($con, $_POST['movie']);
+    $book = mysqli_real_escape_string($con, $_POST['book']);
+    $date = mysqli_real_escape_string($con, date("Y-m-d") );
+    $email = $_SESSION['email'];
 
 
-  $addQuery = "SELECT email FROM user_hobby WHERE email='$email'";
-  $query = mysqli_query($con, $addQuery);
+    $addQuery = "SELECT email FROM user_hobby WHERE email='$email'";
+    $query = mysqli_query($con, $addQuery);
 
-  if (mysqli_num_rows($query) == 0) {
-    $queryInsert = mysqli_query($con, "INSERT INTO user_hobby(email, hobby, fav_movie, fav_book, date_added) VALUES ('$email','$hobby', '$movie', '$book', '$date')");
-    if ($queryInsert) {
-      echo "Registered";
-    }else {
-      echo "Something went wrong with insert";
-    }
-  }elseif (mysqli_num_rows($query) == 1) {
-    $queryUpdate = mysqli_query($con, "UPDATE user_hobby SET hobby='$hobby', fav_movie='$movie', fav_book='$book', date_added='$date' WHERE email='$email'");
+    if (mysqli_num_rows($query) == 0) {
+      $queryInsert = mysqli_query($con, "INSERT INTO user_hobby(email, hobby, fav_movie, fav_book, date_added) VALUES ('$email','$hobby', '$movie', '$book', '$date')");
+      if ($queryInsert) {
+        echo "Registered";
+      }else {
+        echo "Something went wrong with insert";
+      }
+    }elseif (mysqli_num_rows($query) == 1) {
+      $queryUpdate = mysqli_query($con, "UPDATE user_hobby SET hobby='$hobby', fav_movie='$movie', fav_book='$book', date_added='$date' WHERE email='$email'");
 
-    if ($queryUpdate) {
-      echo "Updated";
-    }else {
-      echo "Something went wrong with the update";
+      if ($queryUpdate) {
+        echo "Updated";
+      }else {
+        echo "Something went wrong with the update";
+      }
     }
   }
 
 
+  ?>
+
+  <?php
 }
+
  ?>
+
+
 
  <?php include 'includes/footer.php'; ?>
