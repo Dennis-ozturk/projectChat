@@ -58,5 +58,6 @@ session_start();
         <?php } else { ?>
         <a href='login.php'>Login</a>
         <a href='signup.php'>Sign up!</a>
+        <a href='forgot.php'>Forgot Password!</a>
         <?php } ?>
       </header>
