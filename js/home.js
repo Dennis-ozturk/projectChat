@@ -1,3 +1,3 @@
 function homePage(){
-  window.location.assign("http://localhost/projectChat/");
+  window.location.assign("http://localhost/projectChat/home.php");
 }

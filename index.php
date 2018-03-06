@@ -3,6 +3,7 @@ include 'includes/header.php';
 include 'info.php';
 ?>
 
+<!--
 <div class="blog-posts">
   <h1>Latest tech posts</h1>
 <?php
@@ -20,7 +21,7 @@ for ($row=0; $row <3 ; $row++) {
 <?php } ?>
 
 
-
+-->
 
 
 </div>

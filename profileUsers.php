@@ -1,6 +1,5 @@
 <?php include 'includes/header.php'; ?>
 
-
 <?php
 
 $public_profile = "SELECT name, email, file, type, size, date_added FROM users";
@@ -19,7 +18,6 @@ if (mysqli_num_rows($public_result)) {
         </select>
         <input type="submit" name="add" value="Add"/>
       </form>
-
     </div>
 
 <?php
