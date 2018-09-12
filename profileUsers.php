@@ -1,7 +1,7 @@
 <?php include 'includes/header.php'; ?>
 
 <?php
-
+/* Display user profiles/public */
 $public_profile = "SELECT name, email, file, type, size, date_added FROM users";
 
 $public_result = mysqli_query($con, $public_profile);

@@ -1,7 +1,7 @@
 <?php include 'includes/header.php'; ?>
 <?php
 
-
+/* If user logged in display user profile */
 if (isset($_SESSION['name'])) {
   $name = $_SESSION['name'];
   $email = $_SESSION['email'];
@@ -24,6 +24,8 @@ if (isset($_SESSION['name'])) {
   $profileHobbies = "SELECT hobby, fav_movie, fav_book, date_added FROM user_hobby WHERE email='$email'";
   $profileQuery = mysqli_query($con, $profileHobbies);
 
+  /* Display users hobby that is registered */
+
   if (mysqli_num_rows($profileQuery)) {
     while ($row = $profileQuery->fetch_assoc()) {
       echo "<div class=" . 'profile' .">";
@@ -37,6 +39,7 @@ if (isset($_SESSION['name'])) {
   }
   ?>
 
+<!-- Display hobby -->
   <h4>Friends</h4>
   <?php
     $current_user = $_SESSION['name'];
@@ -59,7 +62,7 @@ if (isset($_SESSION['name'])) {
    ?>
   <br>
 
-
+<!-- Hobby form -->
   <form class="hobby-form close" style="width:320px;" action="" method="POST" enctype="multipart/form-data">
   <h4>Favorite hobby</h4>
   <input type="text" name="hobby" id="hobby" placeholder="Hobby">
@@ -74,6 +77,8 @@ if (isset($_SESSION['name'])) {
   </form>
 
 
+
+<!-- submit hobby -->
   <?php
 
   if (isset($_POST['submitProfile'])) {
@@ -83,10 +88,11 @@ if (isset($_SESSION['name'])) {
     $date = mysqli_real_escape_string($con, date("Y-m-d") );
     $email = $_SESSION['email'];
 
-
+    /* Get hobby info */
     $addQuery = "SELECT email FROM user_hobby WHERE email='$email'";
     $query = mysqli_query($con, $addQuery);
 
+    /* If hobby doesnt exists/ Insert it */
     if (mysqli_num_rows($query) == 0) {
       $queryInsert = mysqli_query($con, "INSERT INTO user_hobby(email, hobby, fav_movie, fav_book, date_added) VALUES ('$email','$hobby', '$movie', '$book', '$date')");
       if ($queryInsert) {
@@ -94,6 +100,7 @@ if (isset($_SESSION['name'])) {
       }else {
         echo "Something went wrong with insert";
       }
+      /* If hobby already exists/ update it */
     }elseif (mysqli_num_rows($query) == 1) {
       $queryUpdate = mysqli_query($con, "UPDATE user_hobby SET hobby='$hobby', fav_movie='$movie', fav_book='$book', date_added='$date' WHERE email='$email'");
 
@@ -104,14 +111,10 @@ if (isset($_SESSION['name'])) {
       }
     }
   }
-
-
   ?>
-
   <?php
 }
-
- ?>
+?>
 
 
 

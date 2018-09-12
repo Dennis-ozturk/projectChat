@@ -4,6 +4,7 @@ include 'includes/header.php';
 <?php
 if (isset($_SESSION['name'])){
 ?>
+<!-- Settings form -->
 <div class="settings">
 	<h2>Settings</h2>
 	<span>Current email: <?php echo $_SESSION['email']; ?> </span>
@@ -37,6 +38,7 @@ if (isset($_SESSION['name'])){
 ?>
 
 <?php
+/* get old and new password */
 if(isset($_POST['subSettings'])){
 	$oldPassword = mysqli_real_escape_string($con, $_POST['oldPassword']);
 	$newPassword1 = mysqli_real_escape_string($con, $_POST['newPassword1']);
@@ -52,7 +54,7 @@ if(isset($_POST['subSettings'])){
 
 	$result = mysqli_query($con, $sqlEmail);
 
-
+	/* Check if password is correct */
 	if (mysqli_num_rows($result) == 1) {
 		while ($row = $currentPassword->fetch_assoc()) {
 			if($row['password'] != $encryptNew ){

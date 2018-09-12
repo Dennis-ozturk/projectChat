@@ -23,6 +23,7 @@ if(isset($_POST['submit'])){
   $pass = mysqli_real_escape_string($con,$_POST['password']);
   $date = mysqli_real_escape_string($con, date("Y-m-d") );
 
+  // User profile picture
   $file = rand(1000, 100000)."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
@@ -35,7 +36,7 @@ if(isset($_POST['submit'])){
   $sqlEmail = "SELECT email FROM users WHERE email='$email'";
   $result = mysqli_query($con, $sqlEmail);
 
-  //If true already taken else false
+  //If true already taken else false / Checks so long as the password input is bigger than or equal to 8 characters
   if(strlen($pass) >= 8){
     if(mysqli_num_rows($result) == 1 ){
       echo "Sorry this email is already take";

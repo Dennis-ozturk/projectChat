@@ -20,6 +20,7 @@ include 'includes/header.php';
 
 <?php
 if(isset($_POST['submitBody'])){
+  /* Get post info from form */
   $email = mysqli_real_escape_string($con, $_SESSION['email']);
   $name = mysqli_real_escape_string($con, $_SESSION['name']);
   $body = mysqli_real_escape_string($con, $_POST['text']);
@@ -34,6 +35,7 @@ if(isset($_POST['submitBody'])){
 
   move_uploaded_file($document_loc,$documentFolder.$document);
 
+  /* INSERT POST/SUBJECT */
   $result = mysqli_query($con, $sqlEmail);
   $file = $con->query("SELECT file from users where email='$email'");
   //If true already taken else false
@@ -62,6 +64,7 @@ if(isset($_POST['submitBody'])){
 if(isset($_SESSION['name'])){
   $bodyAll = "SELECT body, email, name, id, file, date_added FROM posts ORDER BY date_added DESC";
   $result = mysqli_query($con, $bodyAll);
+  /* Display form to update */
   if(mysqli_num_rows($result)){
     while ($row = $result->fetch_assoc()) {
       echo "<div class=". 'body-comment' .">";
