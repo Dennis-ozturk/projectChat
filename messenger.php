@@ -44,7 +44,7 @@ if (isset($_SESSION['name'])) {
   </div>
   <!--Send Messages-->
   <form class="" method="POST">
-    <textarea style="width: 98%; height: 40px;" type="text" name="msg_text" rows="8" id="text"></textarea>
+    <textarea class="text_area" type="text" name="msg_text" rows="8" id="text"></textarea>
     <br>
     <input type="submit" name="submit" value="submit" />
   </form>

@@ -300,6 +300,10 @@ select {
   background-color: #fff;
 }
 
+.text_area{
+  width: 98%; height: 40px;
+}
+
 .close{
   display: none;
 }
